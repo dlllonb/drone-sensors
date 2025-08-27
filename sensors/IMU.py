@@ -11,8 +11,7 @@ signal.signal(signal.SIGTERM, _stop)
 # PORT = sys.argv[1] if len(sys.argv) > 1 else "/dev/ttyACM0"
 PORT = "/dev/ttyACM0"
 
-VENDOR_DIR = os.path.join(os.path.dirname(__file__), "yei_threesapce")
-sys.path.insert(0, VENDOR_DIR)
+sys.path.append(os.path.join(os.getcwd(), "yei_threespace"))
 import threespace_api as ts
 
 try:
