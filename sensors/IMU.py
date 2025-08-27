@@ -8,7 +8,8 @@ def _stop(*_):
 signal.signal(signal.SIGINT, _stop)
 signal.signal(signal.SIGTERM, _stop)
 
-PORT = sys.argv[1] if len(sys.argv) > 1 else "/dev/ttyUSB1"
+# PORT = sys.argv[1] if len(sys.argv) > 1 else "/dev/ttyACM0"
+PORT = "/dev/ttyACM0"
 
 VENDOR_DIR = os.path.join(os.path.dirname(__file__), "yei_threesapce")
 sys.path.insert(0, VENDOR_DIR)
@@ -21,6 +22,7 @@ except Exception:
 
 def emit(obj): 
     print(json.dumps(obj), flush=True)
+    return
 
 emit({"type":"imu_status", "event":"open", "port": PORT, "time":time.time())
 dev = ts.TSUSBSensor(com_port=PORT)
