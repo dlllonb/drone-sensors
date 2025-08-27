@@ -1,0 +1,1 @@
+This folder contains files that can run the Adafruit GPS module, and the yostlabs IMU. The IMU and GPS files, when called from an external file, will write data to stdout. The yei_threespace folder is necessary for the IMU and has been badly patched over from Python 2. There are a few other requirements, but I guess I'll figure those out later locally on the Pi.
