@@ -48,7 +48,7 @@ try:
                 "type":"gps_gga","ts":now,
                 "fix": int(getattr(msg, "gps_qual", 0) or 0),
                 "sats": int(getattr(msg, "num_sats", 0) or 0),
-                "alt_m": float(getattr(msg, "altitude", "nan")),
+                "alt_m": float(msg.altitude) if msg.altitude not in (None, "") else float("nan"),
                 "raw": line
             })
 finally:
