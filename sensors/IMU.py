@@ -24,7 +24,7 @@ def emit(obj):
     print(json.dumps(obj), flush=True)
     return
 
-emit({"type":"imu_status", "event":"open", "port": PORT, "time":time.time())
+emit({"type":"imu_status", "event":"open", "port": PORT, "time":time.time()})
 dev = ts.TSUSBSensor(com_port=PORT)
 
 try:
